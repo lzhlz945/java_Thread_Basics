@@ -23,3 +23,12 @@ notifyAll()：一旦执行此方法就会唤醒所有的wait方法的线程
       2、这三个方法都必须是和监视器相同的调用 java.lang.IllegalMonitorStateException
       3、这三个方法是定义在java.lang.Object类中
 实现runnable接口 MyRunnable my= new MyRunnable（） new Thread(my)
+
+callable
+1、有返回值 2、可以抛异常 3、需要funtrue Task 4、可以作为泛型传递
+
+//实现callable要用FutureTask接口 还要使用Thread来启动
+//FutureTask最终继承了Runnable 接口 就可以实现Thread 来启动线程
+  public Thread(Runnable target) {
+        init(null, target, "Thread-" + nextThreadNum(), 0);
+    }
