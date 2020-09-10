@@ -4,4 +4,6 @@ public class TTTT {
     String age;
     String name;
     String gender;
+    String num;
+
 }
