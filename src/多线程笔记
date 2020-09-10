@@ -32,3 +32,27 @@ callable
   public Thread(Runnable target) {
         init(null, target, "Thread-" + nextThreadNum(), 0);
     }
+
+使用线程池的好处
+1、减少创建线程消耗的内存
+2、提升效率
+3、可以复用
+4、便于管理
+5、类似于公交车
+execute()  参数是Callable
+submit()   参数是Runnable
+还需要手动停止shutdown()
+  Class<? extends ExecutorService> aClass = service.getClass();
+        System.out.println(aClass);
+        ThreadPoolExecutor service1 = (ThreadPoolExecutor) service;
+        service1.setCorePoolSize(1);
+        service1.setKeepAliveTime(1,TimeUnit.SECONDS);
+
+        service1.setMaximumPoolSize(10);
+
+
+        这些方法是通过获取service的getClass（）获取的ExecutorService的实现类来获取的方法
+         ThreadPoolExecutor service1 = (ThreadPoolExecutor) service;
+setCorePoolSize(1) 核心池的大小
+service1.setKeepAliveTime(1,TimeUnit.SECONDS);  线程多久没有任务时停止
+service1.setMaximumPoolSize(10);  z最大线程数
