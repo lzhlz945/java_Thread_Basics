@@ -13,3 +13,13 @@ synchronize和lock的相同和不同（简化）
 相同：二者都可以决绝线程安全问题
 不同：synchronize机智在执行完全相应的代码以后，自动释放同步监视器
       lock需要手动启动同步，结束时也要手动实现unlock（）；
+
+涉及到的三个方法
+
+wait（）：线程进入阻塞状态，并释放监视器
+notify（）：唤醒被wait（）的线程，有多个就唤醒优先级高的那个
+notifyAll()：一旦执行此方法就会唤醒所有的wait方法的线程
+注意：1、这三个方法都必须在同步方法或者同步代码块中执行
+      2、这三个方法都必须是和监视器相同的调用 java.lang.IllegalMonitorStateException
+      3、这三个方法是定义在java.lang.Object类中
+实现runnable接口 MyRunnable my= new MyRunnable（） new Thread(my)
