@@ -5,5 +5,5 @@ public class TTTT {
     String name;
     String gender;
     String num;
-
+    String dog;
 }
